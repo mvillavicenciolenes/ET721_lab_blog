@@ -1,17 +1,23 @@
-{% comment %} blog/templates/index.html {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael's log Posts</title>
+    <title>Michael's Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blogstyle.css' %}">
 </head>
 <body>
-    <h1>My Blog Posts</h1>
-    <ul>
-       
-    </ul>
+    <div class="navbar">
+        <a href="{% url 'post_list' %}">Home</a>
+        <a href="{% url 'post_create' %}" class="button-link">New Post</a>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <p>Michael's Random Blogs 2024</p>
+    </div>
 </body>
 </html>
-
-

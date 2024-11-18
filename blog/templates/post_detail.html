@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p><strong>Created:</strong> {{ post.created_at|date:"F j, Y" }}</p>
+    <p><strong>Last Updated:</strong> {{ post.updated_at|date:"F j, Y, g:i a" }}</p>
+    <hr>
+    <p>{{ post.content }}</p>
+    <a href="{% url 'post_edit' post.id %}" class="button-link"><button>Edit Post</button></a>
+    <a href="{% url 'post_list' %}" class="button-link"><button>Back to Home</button></a>
+{% endblock %}
